@@ -10,7 +10,24 @@ import SwiftUI
 
 struct ListContentView : View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image("squareboat")
+                .frame(width: 100, height: 80, alignment: .center).clipped()
+            
+        VStack(alignment: .leading){
+            Text("SQUAREBOAT")
+                .font(.headline)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
+            Text("PVT. LTD.")
+                .font(.subheadline)
+                .multilineTextAlignment(.leading)
+            Text("Company")
+                .color(.gray)
+                .font(.subheadline)
+                .multilineTextAlignment(.leading)
+            }
+        }
     }
 }
 
