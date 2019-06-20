@@ -12,9 +12,7 @@ struct ContentView : View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 Spacer()
-                
                 VStack{
                     Image("squareboat")
                         .padding(.all, 20)
@@ -26,18 +24,20 @@ struct ContentView : View {
                         .shadow(radius: 10)
                         .offset(y: -100)
                         .padding(.bottom, -110)
-                    Text("Welcome to")
+                    
+                    Text("Great products for great ideas")
+                        .font(.headline)
                         .italic()
-                        .color(.blue)
-                        .padding(.top,20)
-                    Text("SwiftUI Sample App")
-                        .bold()
-                        .color(.blue)
-                        .padding(.bottom, 20)
+                        .fontWeight(.semibold)
+                        .color(.white)
+                        .multilineTextAlignment(.leading)
+                        .padding([.top,.bottom],10)
                     
                     }.frame(width: 500)
-                    .background(Color.blue.opacity(0.1
-                    ))
+                    .background(Color.blue.opacity(0.7
+                    )).background(Image("hero")
+                        .opacity(0.12)
+                        .animation(.spring()))
                 
                 Spacer()
                 
@@ -49,7 +49,7 @@ struct ContentView : View {
                         .padding([.top,.bottom], 10)
                 }).border(Color.blue, width : 2, cornerRadius: 20)
                     .padding(20)
-            }
+                    }.navigationBarTitle(Text("Squareboat Solutions"))
         }
     }
 }
