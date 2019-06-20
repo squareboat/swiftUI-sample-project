@@ -41,7 +41,7 @@ struct ContentView : View {
                 
                 Spacer()
                 
-                NavigationButton(destination: ListContentView(), label: {
+                NavigationButton(destination: ListContentView(clients: clientData), label: {
                     Text("Continue")
                         .bold()
                         .color(.blue)

@@ -9,24 +9,25 @@
 import SwiftUI
 
 struct ListContentView : View {
+    var clients: [ClientsModel] = []
     var body: some View {
-        HStack{
-            Image("squareboat")
-                .frame(width: 100, height: 80, alignment: .center).clipped()
-            
-        VStack(alignment: .leading){
-            Text("SQUAREBOAT")
-                .font(.headline)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.leading)
-            Text("PVT. LTD.")
-                .font(.subheadline)
-                .multilineTextAlignment(.leading)
-            Text("Company")
-                .color(.gray)
-                .font(.subheadline)
-                .multilineTextAlignment(.leading)
+        List(clients){ client in
+            Image(client.image)
+                .frame(width: 80, height: 80, alignment: .center).clipped(antialiased: false)
+            VStack(alignment: .leading){
+                Text(client.name)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                Text(client.dev_type)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.leading)
+                Text(client.service)
+                    .color(.gray)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.leading)
             }
+            
         }
     }
 }
@@ -34,7 +35,10 @@ struct ListContentView : View {
 #if DEBUG
 struct ListContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ListContentView()
-    }
+        Group{
+        ListContentView(clients: clientData)
+        ListContentView(clients: clientData).environment(\.colorScheme, .dark)
+        }
+        }
 }
 #endif
