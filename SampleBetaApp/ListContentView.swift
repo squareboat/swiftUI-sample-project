@@ -12,27 +12,9 @@ struct ListContentView : View {
     var clients: [ClientsModel] = []
     var body: some View {
         List(clients){ client in
-            NavigationButton(destination: Text(client.name)){
-            Image(client.image)
-                .resizable()
-                .padding(10)
-                .aspectRatio(1/1, contentMode: .fit)
-                .clipped()
-                .cornerRadius(8)
-            VStack(alignment: .leading){
-                Text(client.name)
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                Text(client.dev_type)
-                    .font(.subheadline)
-                    .multilineTextAlignment(.leading)
-                Text(client.service)
-                    .color(.gray)
-                    .font(.subheadline)
-                    .multilineTextAlignment(.leading)
-                }
-            }
+            
+            ClientRow(client: client)
+            
             }.navigationBarTitle(Text("Our Clients"))
             .listStyle(.grouped)
     }
@@ -52,3 +34,30 @@ struct ListContentView_Previews : PreviewProvider {
     }
 }
 #endif
+
+struct ClientRow : View {
+    var client : ClientsModel
+    var body: some View {
+        return NavigationButton(destination: ClientDetailView(client: client)){
+            Image(client.image)
+                .resizable()
+                .padding(10)
+                .aspectRatio(1/1, contentMode: .fit)
+                .clipped()
+                .cornerRadius(8)
+                VStack(alignment: .leading){
+                    Text(client.name)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        Text(client.dev_type)
+                            .font(.subheadline)
+                            .multilineTextAlignment(.leading)
+                            Text(client.service)
+                                .color(.gray)
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+            }
+        }
+    }
+}

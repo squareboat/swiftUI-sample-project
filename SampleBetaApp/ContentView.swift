@@ -13,31 +13,8 @@ struct ContentView : View {
         NavigationView {
             VStack {
                 Spacer()
-                VStack{
-                    Image("squareboat")
-                        .padding(.all, 20)
-                        .frame(width: 200.0, height: 200.0, alignment: .center)
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .overlay(
-                            Circle().stroke(Color.blue,lineWidth: 4))
-                        .shadow(radius: 10)
-                        .offset(y: -100)
-                        .padding(.bottom, -110)
-                    
-                    Text("Great products for great ideas")
-                        .font(.headline)
-                        .italic()
-                        .fontWeight(.semibold)
-                        .color(.white)
-                        .multilineTextAlignment(.leading)
-                        .padding([.top,.bottom],10)
-                    
-                    }.frame(width: 500)
-                    .background(Color.blue.opacity(0.7
-                    )).background(Image("hero")
-                        .opacity(0.12)
-                        .animation(.spring()))
+                
+                MiddleView()
                 
                 Spacer()
                 
@@ -64,3 +41,34 @@ struct ContentView_Previews : PreviewProvider {
     }
 }
 #endif
+
+struct MiddleView : View {
+    var body: some View {
+        return VStack{
+            Image("squareboat")
+                .padding(.all, 20)
+                .frame(width: 200.0, height: 200.0, alignment: .center)
+                .scaledToFill()
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(Color.blue,lineWidth: 4))
+                        .shadow(radius: 10)
+                        .offset(y: -100)
+                        .padding(.bottom, -110)
+            
+            
+                        Text("Great products for great ideas")
+                            .font(.headline)
+                            .italic()
+                            .fontWeight(.semibold)
+                            .color(.white)
+                            .multilineTextAlignment(.leading)
+                            .padding([.top,.bottom],10)
+            
+                            }.frame(width: 500)
+                                .background(Color.blue.opacity(0.7
+                                )).background(Image("hero")
+                                    .opacity(0.12)
+                                    .animation(.spring()))
+                            }
+                        }
