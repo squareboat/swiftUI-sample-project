@@ -12,8 +12,13 @@ struct ListContentView : View {
     var clients: [ClientsModel] = []
     var body: some View {
         List(clients){ client in
+            NavigationButton(destination: Text(client.name)){
             Image(client.image)
-                .frame(width: 80, height: 80, alignment: .center).clipped(antialiased: false)
+                .resizable()
+                .padding(10)
+                .aspectRatio(1/1, contentMode: .fit)
+                .clipped()
+                .cornerRadius(8)
             VStack(alignment: .leading){
                 Text(client.name)
                     .font(.headline)
@@ -26,9 +31,10 @@ struct ListContentView : View {
                     .color(.gray)
                     .font(.subheadline)
                     .multilineTextAlignment(.leading)
+                }
             }
-            
-        }
+            }.navigationBarTitle(Text("Our Clients"))
+            .listStyle(.grouped)
     }
 }
 
@@ -36,9 +42,13 @@ struct ListContentView : View {
 struct ListContentView_Previews : PreviewProvider {
     static var previews: some View {
         Group{
-        ListContentView(clients: clientData)
-        ListContentView(clients: clientData).environment(\.colorScheme, .dark)
+            NavigationView{
+                ListContentView(clients: clientData)
+            }
+            NavigationView{
+                ListContentView(clients: clientData)
+            }.environment(\.colorScheme, .dark)
         }
-        }
+    }
 }
 #endif
