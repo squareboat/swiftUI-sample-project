@@ -18,7 +18,7 @@ struct ContentView : View {
                 
                 Spacer()
                 
-                NavigationButton(destination: ListContentView(clients: clientData), label: {
+                NavigationButton(destination: ListContentView(clientStore: ClientsStore(clients: clientData)), label: {
                     Text("Continue")
                         .bold()
                         .color(.blue)
@@ -29,6 +29,7 @@ struct ContentView : View {
                     }.navigationBarTitle(Text("Squareboat Solutions"))
         }
     }
+    
 }
 
 #if DEBUG
@@ -43,6 +44,7 @@ struct ContentView_Previews : PreviewProvider {
 #endif
 
 struct MiddleView : View {
+    var rotated = false
     var body: some View {
         return VStack{
             Image("squareboat")

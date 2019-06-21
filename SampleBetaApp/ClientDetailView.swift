@@ -15,7 +15,7 @@ struct ClientDetailView : View {
             Image(client.image)
                 .resizable()
                 .padding(10)
-                .aspectRatio(1/1, contentMode: .fit)
+                .aspectRatio(contentMode: .fit)
                 .clipped()
                 .cornerRadius(8)
             

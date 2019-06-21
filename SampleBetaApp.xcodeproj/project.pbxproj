@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30115EFA22BCDFCD00983029 /* clientsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30115EF922BCDFCD00983029 /* clientsClass.swift */; };
 		3031C03522BB615F008800AA /* clientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3031C03422BB615F008800AA /* clientData.json */; };
 		3031C03722BB6771008800AA /* ClientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031C03622BB6771008800AA /* ClientsModel.swift */; };
 		3031C03B22BB9B2A008800AA /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031C03A22BB9B2A008800AA /* ClientDetailView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30115EF922BCDFCD00983029 /* clientsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsClass.swift; sourceTree = "<group>"; };
 		3031C03422BB615F008800AA /* clientData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = clientData.json; sourceTree = "<group>"; };
 		3031C03622BB6771008800AA /* ClientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsModel.swift; sourceTree = "<group>"; };
 		3031C03A22BB9B2A008800AA /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				3031C03422BB615F008800AA /* clientData.json */,
 				3031C03622BB6771008800AA /* ClientsModel.swift */,
 				3031C03A22BB9B2A008800AA /* ClientDetailView.swift */,
+				30115EF922BCDFCD00983029 /* clientsClass.swift */,
 			);
 			path = SampleBetaApp;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30115EFA22BCDFCD00983029 /* clientsClass.swift in Sources */,
 				3060444C22B9FC770087221F /* AppDelegate.swift in Sources */,
 				3031C03722BB6771008800AA /* ClientsModel.swift in Sources */,
 				3060444E22B9FC770087221F /* SceneDelegate.swift in Sources */,
