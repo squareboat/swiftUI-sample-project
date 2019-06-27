@@ -32,7 +32,7 @@ struct ClientDetailView_Previews : PreviewProvider {
         Group
         {
             NavigationView{
-                ClientDetailView(client: clientData[0])
+                ClientDetailView(client: clientData[5])
             }
             NavigationView{
                 ClientDetailView(client: clientData[1])
